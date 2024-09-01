@@ -21,7 +21,7 @@ export class AppComponent {
   counter$:Observable<number> = of(1)
   products$ = this.store.select("products")
   product:string="react"
-  title = 'ngrx-angular';
+  title = 'angular18-ngrx';
 id=1;
  // constructor(private store:Store<AppState>){
   constructor(){
