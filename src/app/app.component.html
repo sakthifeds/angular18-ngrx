@@ -1,0 +1,24 @@
+<div>
+  value:{{counter$ | async}}
+</div>
+
+<div>----</div>
+
+<input type="text" [(ngModel)]="product">
+<button (click)="addNewProduct()">Add new Product</button>
+<button (click)="removeProduct()">Add new Product</button>
+<h2>products</h2>
+
+<ng-container *ngIf="products$ | async as products">
+<div>asdass</div>
+<div *ngIf="products.length > 0; else noItems">
+  <ng-container *ngFor="let product of products$ | async">
+    <div><b>{{product.id}}</b>---{{product.name}}</div>
+    </ng-container>
+  </div>
+</ng-container>
+
+  <!-- Fallback if there are no items -->
+  <ng-template #noItems>
+    <p>No items found.</p>
+  </ng-template>
